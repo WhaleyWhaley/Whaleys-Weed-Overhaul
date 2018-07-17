@@ -1,0 +1,21 @@
+[
+ {
+    "type" : "item_group",
+    "id" : "behindcounter",
+    "items":[
+      ["mag_weed", 25]
+    ]
+  },{
+    "id": "magazines",
+    "type": "item_group",
+    "items": [
+      [ "mag_weed", 25 ],
+    ]
+  },{
+    "id": "homebooks",
+    "type": "item_group",
+    "items": [
+      [ "mag_weed", 15 ],
+    ]
+  }
+]
