@@ -1,0 +1,92 @@
+[
+	{
+        "id" : "cross_joint",
+        "type" : "COMESTIBLE",
+        "comestible_type" : "MED",
+        "name" : "cross_joint",
+        "description" : "Marijuana, cannabis, pot.  Whatever you want to call it, it's rolled up in a piece of paper and ready for smokin'. This ones TWICE as nice.",
+        "weight" : 1,
+        "volume" : 1,
+        "price" : 500,
+        "stack_size" : 100,
+        "symbol" : "!",
+        "color" : "green",
+        "quench" : -5,
+        "stim" : -5,
+        "healthy" : 0,
+        "fun" : 25,
+        "addiction_potential" : 1,
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You smoke your blunt.",
+            "effects" : [ { "id" : "high", "duration" : 15 } ],
+            "stat_adjustments" : { "hunger" : 5, "thirst" : 5 },
+            "fields_produced" : { "fd_weedsmoke" : 2 },
+            "charges_needed" : { "fire" : 1 },
+            "moves" : 250
+		}
+    },{
+		"type" : "recipe",
+		"result": "cross_joint",
+		"category": "CC_CHEM",
+		"subcategory": "CSC_CHEM_DRUGS",
+		"skill_used": "fabrication",
+		"time": 2000,
+		"book_learn": [ [ "mag_weed", 0 ] ],
+		"reversible": true,
+		"flags": ["BLIND_HARD"],
+		"components": [
+			[
+			[ "rolling_paper", 1 ]
+			],
+			[
+			[ "joint", 2 ]
+			]
+		]
+	},{
+		"type" : "recipe",
+		"result": "weed_blunt",
+		"category": "CC_CHEM",
+		"subcategory": "CSC_CHEM_DRUGS",
+		"skill_used": "fabrication",
+		"time": 2000,
+		"book_learn": [ [ "mag_weed", 0 ] ],
+		"reversible": true,
+		"flags": ["BLIND_HARD"],
+		"components": [
+			[
+			[ "cigar", 1 ]
+			],
+			[
+			[ "raw_indica", 2 ],
+			[ "raw_sativa", 2 ]
+			]
+		]
+	},{
+        "id" : "weed_blunt",
+        "type" : "COMESTIBLE",
+        "comestible_type" : "MED",
+        "name" : "blunt",
+        "description" : "Rolled, cured tobacco leaf, filled with weed.",
+        "weight" : 3,
+        "volume" : 1,
+        "price" : 3000,
+        "charges" : 5,
+        "symbol" : "!",
+        "color" : "brown",
+        "stim" : -3,
+        "healthy" : -1,
+        "fun" : 25,
+        "addiction_potential" : 15,
+        "addiction_type" : "nicotine",
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You smoke your blunt.",
+            "effects" : [ { "id" : "high", "duration" : 15 } ],
+            "stat_adjustments" : { "hunger" : 5, "thirst" : 5 },
+            "fields_produced" : { "fd_weedsmoke" : 4 },
+            "charges_needed" : { "fire" : 1 },
+            "moves" : 250
+		}
+    }
+]

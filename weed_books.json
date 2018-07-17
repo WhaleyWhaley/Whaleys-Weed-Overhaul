@@ -1,0 +1,18 @@
+[
+  {
+    "id": "mag_weed",
+    "type": "BOOK",
+    "name": "Weed World",
+    "name_plural": "Weed Worlds",
+    "description": "A magazine dedicated to marijuana culture. Includes recipes and how-to guides about marijuana processing.",
+    "weight": 300,
+    "volume": 1,
+    "price": 2200,
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "green",
+    "intelligence": 6,
+    "time": 20,
+    "fun": 2
+  }
+]

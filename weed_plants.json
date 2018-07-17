@@ -3,8 +3,8 @@
         "type" : "furniture",
         "id" : "f_indica_plant",
         "name": "Indica Cannabis Plant",
-        "symbol": "f",
-        "color": "green",
+        "symbol": "&",
+        "color": "light_green",
         "move_cost_mod": 0,
         "required_str": -1,
         "flags": ["TRANSPARENT", "FLAMMABLE_ASH"],
@@ -21,7 +21,7 @@
         "type" : "furniture",
         "id" : "f_sativa_plant",
         "name": "Sativa Cannabis Plant",
-        "symbol": "f",
+        "symbol": "&",
         "color": "green",
         "move_cost_mod": 0,
         "required_str": -1,
@@ -96,24 +96,6 @@
             "tools_needed" : { "apparatus" : -1 }
 			}
     },{
-        "id" : "cross_joint",
-        "type" : "COMESTIBLE",
-        "comestible_type" : "MED",
-        "name" : "joint",
-        "description" : "Marijuana, cannabis, pot.  Whatever you want to call it, it's rolled up in a piece of paper and ready for smokin'. This ones TWICE as nice.",
-        "weight" : 1,
-        "volume" : 1,
-        "price" : 500,
-        "stack_size" : 100,
-        "symbol" : "!",
-        "color" : "green",
-        "quench" : -5,
-        "stim" : -8,
-        "healthy" : 0,
-        "fun" : 25,
-        "addiction_potential" : 1,
-        "use_action" : "SMOKING"
-    },{
 		"type": "COMESTIBLE",
 		"id": "seed_weed_i",
 		"copy-from": "seed",
@@ -153,7 +135,7 @@
 		"skill_used": "cooking",
 		"difficulty": 3,
 		"time": 8000,
-		"autolearn": [[ "cooking", 1 ]],
+		"book_learn": [ [ "mag_weed", 0 ] ],
 		"qualities" : [
 			{"id":"BOIL","level":2}
 		],
