@@ -1,0 +1,309 @@
+[
+	{
+        "type" : "furniture",
+        "id" : "f_indica_plant",
+        "name": "Indica Cannabis Plant",
+        "symbol": "f",
+        "color": "green",
+        "move_cost_mod": 0,
+        "required_str": -1,
+        "flags": ["TRANSPARENT", "FLAMMABLE_ASH"],
+        "examine_action": "harvest_furn_nectar",
+        "harvest_by_season" : [
+            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_indica", "base_num": [ 1, 4 ] } ] }
+        ],
+        "bash": {
+            "str_min": 2, "str_max": 6,
+            "sound": "crunch.",
+            "sound_fail": "whish."
+        }
+    },{
+        "type" : "furniture",
+        "id" : "f_sativa_plant",
+        "name": "Sativa Cannabis Plant",
+        "symbol": "f",
+        "color": "green",
+        "move_cost_mod": 0,
+        "required_str": -1,
+        "flags": ["TRANSPARENT", "FLAMMABLE_ASH"],
+        "examine_action": "harvest_furn_nectar",
+        "harvest_by_season" : [
+            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_sativa", "base_num": [ 1, 4 ] } ] }
+        ],
+        "bash": {
+            "str_min": 2, "str_max": 6,
+            "sound": "crunch.",
+            "sound_fail": "whish."
+        }
+    },{
+        "type" : "COMESTIBLE",
+        "id" : "raw_indica",
+        "name" : "indica bud",
+        "name_plural" : "indica buds",
+        "weight" : 96,
+        "color" : "green",
+        "spoils_in" : 150,
+        "comestible_type" : "MED",
+        "symbol" : "%",
+        "description" : "A collection of freshly picked indica nugs.  In their current raw state they are still smokable",
+        "price" : 60,
+        "material" : "veggy",
+        "volume" : 1,
+        "stack_size" : 4,
+        "charges" : 1,
+        "stim" : -5,
+        "quench" : -5,
+        "fun" : 5,
+        "healthy" : 0,
+        "addiction_potential" : 1,
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You smoke your indica buds. Sitting and reading sounds great.",
+            "effects" : [ { "id" : "high", "duration" : 15 } ],
+            "stat_adjustments" : {"hunger" : 10},
+            "fields_produced" : {"fd_weedsmoke" : 2},
+            "charges_needed" : { "fire" : 1 },
+            "tools_needed" : { "apparatus" : -1 }
+			}
+    },{
+        "type" : "COMESTIBLE",
+        "id" : "raw_sativa",
+        "name" : "sativa bud",
+        "name_plural" : "sativa buds",
+        "weight" : 96,
+        "color" : "green",
+        "spoils_in" : 150,
+        "comestible_type" : "MED",
+        "symbol" : "%",
+        "description" : "A collection of freshly picked sativa nugs.  In their current raw state they are still smokable",
+        "price" : 60,
+        "material" : "veggy",
+        "volume" : 1,
+        "stack_size" : 4,
+        "charges" : 1,
+        "stim" : 1,
+        "quench" : -5,
+        "fun" : 5,
+        "healthy" : 0,
+        "addiction_potential" : 1,
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You smoke your sativa buds. Going on a walk sounds great.",
+            "effects" : [ { "id" : "high", "duration" : 15 } ],
+            "stat_adjustments" : {"hunger" : 10},
+            "fields_produced" : {"fd_weedsmoke" : 2},
+            "charges_needed" : { "fire" : 1 },
+            "tools_needed" : { "apparatus" : -1 }
+			}
+    },{
+        "id" : "cross_joint",
+        "type" : "COMESTIBLE",
+        "comestible_type" : "MED",
+        "name" : "joint",
+        "description" : "Marijuana, cannabis, pot.  Whatever you want to call it, it's rolled up in a piece of paper and ready for smokin'. This ones TWICE as nice.",
+        "weight" : 1,
+        "volume" : 1,
+        "price" : 500,
+        "stack_size" : 100,
+        "symbol" : "!",
+        "color" : "green",
+        "quench" : -5,
+        "stim" : -8,
+        "healthy" : 0,
+        "fun" : 25,
+        "addiction_potential" : 1,
+        "use_action" : "SMOKING"
+    },{
+		"type" : "recipe",
+		"result": "weed_oil",
+		"category": "CC_FOOD",
+		"subcategory": "CSC_FOOD_OTHER",
+		"skill_used": "cooking",
+		"difficulty": 3,
+		"time": 8000,
+		"autolearn": [[ "cooking", 1 ]],
+		"qualities" : [
+			{"id":"BOIL","level":2}
+		],
+		"tools": [
+			[ [ "surface_heat", 8, "LIST" ] ]
+		],
+		"components": [
+			[ 
+				[ "raw_indica", 2 ],
+				[ "raw_sativa", 2 ] 				
+			],
+			[ [ "cooking_oil", 1 ] ]
+		]
+	},{
+        "type" : "COMESTIBLE",
+        "id" : "weed_oil",
+        "name" : "medicated cooking oil",
+        "name_plural" : "medicated cooking oil",
+        "weight" : 117,
+        "color" : "yellow",
+        "container" : "jug_plastic",
+        "comestible_type" : "DRINK",
+        "symbol" : "~",
+        "quench" : -8,
+        "nutrition" : 1,
+        "description" : "Thin green marijuana oil used for cooking.",
+        "price" : 40,
+        "material" : "oil",
+        "volume" : 1,
+        "charges" : 2,
+        "phase" : "liquid",
+        "fun" : 2
+    },{
+		"type": "COMESTIBLE",
+		"id": "seed_weed_i",
+		"copy-from": "seed",
+		"name": "indica cannabis seeds",
+		"name_plural": "indica cannabis seeds",
+		"color": "green",
+		"use_action": "SEED",
+		"quench": -1,
+		"healthy": 1,
+		"nutrition": 2,
+		"description": "Seeds of the cannabis plant.  Filled with vitamins, they can be roasted or eaten raw.",
+		"price": 100,
+		"weight": 2,
+		"charges": 2,
+		"seed_data": { "plant_name": "f_indica_plant", "fruit": "raw_indica", "grow": 91 }
+    },{
+		"type": "COMESTIBLE",
+		"id": "seed_weed_s",
+		"copy-from": "seed",
+		"name": "sativa cannabis seeds",
+		"name_plural": "sativa cannabis seeds",
+		"color": "green",
+		"use_action": "SEED",
+		"quench": -1,
+		"healthy": 1,
+		"nutrition": 2,
+		"description": "Seeds of the cannabis plant.  Filled with vitamins, they can be roasted or eaten raw.",
+		"price": 100,
+		"weight": 2,
+		"charges": 2,
+		"seed_data": { "plant_name": "f_sativa_plant", "fruit": "raw_sativa", "grow": 91 }
+    },{
+		"type" : "recipe",
+		"result": "weed_wax",
+		"category": "CC_FOOD",
+		"subcategory": "CSC_FOOD_OTHER",
+		"skill_used": "cooking",
+		"difficulty": 3,
+		"time": 8000,
+		"autolearn": [[ "cooking", 1 ]],
+		"qualities" : [
+			{"id":"BOIL","level":2}
+		],
+		"tools": [
+			[
+			[ "surface_heat", 8, "LIST" ]
+			],[
+			[ "rag", -1 ]
+			]
+		],
+		"components": [
+			[ 
+				[ "raw_indica", 2 ],
+				[ "raw_sativa", 2 ] 				
+			],
+			[ [ "chem_ethanol", 1 ] ]
+		]
+	},{
+        "type" : "COMESTIBLE",
+        "id" : "weed_wax",
+        "name" : "Cannabis Wax",
+        "name_plural" : "Cannabis Wax",
+        "weight" : 75,
+        "color" : "yellow",
+        "container" : "jug_plastic",
+        "comestible_type" : "MED",
+        "symbol" : "~",
+        "quench" : -2,
+        "stim" : -8,
+        "nutrition" : 1,
+        "description" : "Sticky wax made from a cannabis plant.",
+        "price" : 4000,
+        "material" : "oil",
+        "volume" : 1,
+        "charges" : 2,
+        "phase" : "liquid",
+        "fun" : 20,
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You smoke your dabs. This stuff is strong.",
+            "effects" : [ { "id" : "high", "duration" : 20 } ],
+            "stat_adjustments" : {"hunger" : 12},
+            "fields_produced" : {"fd_weedsmoke" : 1},
+            "charges_needed" : { "fire" : 1 },
+            "tools_needed" : { "apparatus" : -1 }
+			}
+    },{
+		"type" : "recipe",
+		"result": "medible_cookie",
+		"category": "CC_FOOD",
+		"subcategory": "CSC_FOOD_OTHER",
+		"skill_used": "cooking",
+		"difficulty": 3,
+		"time": 8000,
+		"autolearn": true,
+		"qualities" : [
+			{"id":"COOK","level":2}
+		], "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
+		"components": [
+			[
+			[ "milk", 1],
+			[ "milk_powder", 1 ],
+			[ "con_milk", 1 ],
+			[ "can_coconut", 1 ]
+			],
+			[
+			[ "powder_eggs", 5 ],
+			[ "egg_bird", 1 ],
+			[ "egg_reptile", 1 ]
+			],
+			[
+			[ "weed_oil", 2 ]
+			],
+			[
+			[ "sugar", 5 ],
+			[ "cinnamon", 2 ],
+			[ "molasses", 1 ],
+			[ "honey_bottled", 1 ],
+			[ "honey_glassed", 1 ],
+			[ "honeycomb", 1 ],
+			[ "chocolate", 1 ]
+			],
+			[
+			[ "flour", 1 ]
+			]
+		]
+	},{
+        "type" : "COMESTIBLE",
+        "id" : "medible_cookie",
+        "name" : "medible cookie",
+        "weight" : 38,
+        "color" : "brown",
+        "comestible_type" : "MED",
+        "symbol" : "%",
+        "quench" : -1,
+        "nutrition" : 12,
+        "stim" : -8,
+        "description" : "Medicated cookies.",
+        "price" : 2195,
+        "material" : ["wheat", "junk"],
+        "volume" : 1,
+        "charges" : 4,
+        "stack_size" : 5,
+        "fun" : 15,
+        "flags": [ "EATEN_HOT" ],
+        "use_action" : {
+            "type" : "consume_drug",
+            "activation_message" : "You eat some medibles.",
+            "effects" : [ { "id" : "high", "duration" : 30 } ]
+			}
+    }
+]
