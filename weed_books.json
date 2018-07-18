@@ -11,7 +11,7 @@
     "material": [ "paper" ],
     "symbol": "?",
     "color": "green",
-    "intelligence": 6,
+    "intelligence": 5,
     "time": 20,
     "fun": 2
   }
