@@ -10,7 +10,7 @@
         "flags": ["TRANSPARENT", "FLAMMABLE_ASH"],
         "examine_action": "harvest_furn_nectar",
         "harvest_by_season" : [
-            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_indica", "base_num": [ 1, 4 ] } ] }
+            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_indica", "base_num": [ 2, 5 ] } ] }
         ],
         "bash": {
             "str_min": 2, "str_max": 6,
@@ -28,7 +28,7 @@
         "flags": ["TRANSPARENT", "FLAMMABLE_ASH"],
         "examine_action": "harvest_furn_nectar",
         "harvest_by_season" : [
-            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_sativa", "base_num": [ 1, 4 ] } ] }
+            { "seasons": [ "spring", "summer", "autumn" ], "entries": [ { "drop": "raw_sativa", "base_num": [ 2, 5 ] } ] }
         ],
         "bash": {
             "str_min": 2, "str_max": 6,
