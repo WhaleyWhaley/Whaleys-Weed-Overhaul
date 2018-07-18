@@ -9,13 +9,13 @@
     "id": "magazines",
     "type": "item_group",
     "items": [
-      [ "mag_weed", 25 ],
+      [ "mag_weed", 25 ]
     ]
   },{
     "id": "homebooks",
     "type": "item_group",
     "items": [
-      [ "mag_weed", 15 ],
+      [ "mag_weed", 15 ]
     ]
   }
 ]
